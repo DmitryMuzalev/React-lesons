@@ -1,9 +1,9 @@
-ul{
-   list-style: none;
+*{
+   padding: 0;
 }
 
-.header img {
-   width: 50px;
+ul{
+   list-style: none;
 }
 
 .app-wrapper{
@@ -17,14 +17,5 @@ ul{
    "navbar content";
 }
 
-.header{
-   grid-area: header;
-   background-color: grey;
-}
-.navbar{
-   grid-area: navbar;
-   background-color: grey;
-}
-.content{
-   grid-area: content;
-}
+
+

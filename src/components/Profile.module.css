@@ -1,0 +1,9 @@
+.content{
+   grid-area: content;
+}
+
+.banner{
+   height: 250px;
+   background: url("./../banner.jpg") no-repeat center;
+   background-size: cover;
+}

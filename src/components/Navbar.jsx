@@ -1,21 +1,33 @@
+import style from './Navbar.module.css';
+
 export default function Navbar() {
   return (
-    <nav className="navbar">
-      <ul>
+    <nav className={style.navbar}>
+      <ul className={style.list}>
         <li>
-          <a href="#link">Profile</a>
+          <a className={style.link} href="#link">
+            Profile
+          </a>
         </li>
         <li>
-          <a href="#link">Message</a>
+          <a className={style.link} href="#link">
+            Message
+          </a>
         </li>
         <li>
-          <a href="#link">News</a>
+          <a className={style.link} href="#link">
+            News
+          </a>
         </li>
         <li>
-          <a href="#link">Music</a>
+          <a className={style.link} href="#link">
+            Music
+          </a>
         </li>
         <li>
-          <a href="#link">Setting</a>
+          <a className={style.link} href="#link">
+            Setting
+          </a>
         </li>
       </ul>
     </nav>

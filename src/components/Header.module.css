@@ -1,0 +1,12 @@
+.header{
+   display: flex;
+   padding: 0px 20px;
+   grid-area: header;
+   background-color: grey;
+
+}
+
+.logo {
+   width: 50px;
+
+}
