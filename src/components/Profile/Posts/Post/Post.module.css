@@ -1,7 +1,16 @@
 .post{
-display: flex;
-align-items: center;
-gap: 15px;
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+   border: 2px solid black;
+   padding: 10px;
+   border-radius: 10px;
+}
+
+.post__body{
+   display: flex;
+   align-items: center;
+   gap: 15px;
 }
 
 .avatar{
@@ -10,4 +19,18 @@ gap: 15px;
 
 .text{
 
+}
+
+
+.post__like {
+   display: flex;
+   gap:5px;
+   align-self: flex-end;
+}
+.post__like   span{
+   font-weight: 500;
+}
+
+.post__like   img{
+   width:20px;
 }
