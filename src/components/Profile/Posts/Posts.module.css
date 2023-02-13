@@ -1,0 +1,33 @@
+.posts{
+   margin: 30px 0px 0px 0px;
+}
+.title{
+   margin: 0px 0px 10px 0px;
+}
+.newPost{
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   width: 80%;
+}
+.input{
+   padding: 10px;
+   font-size: 16px;
+}
+.button{
+   cursor: pointer;
+   padding: 5px 15px;
+   background-color: black;
+   color: white;
+   align-self: flex-end;
+}
+
+.button:hover{
+   background-color:grey;
+}
+
+.list{
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}

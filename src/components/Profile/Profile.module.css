@@ -1,9 +1,10 @@
 .content{
    grid-area: content;
+   padding-bottom: 50px;
 }
 
 .banner{
    height: 250px;
-   background: url("./../banner.jpg") no-repeat center;
+   background: url("./banner.jpg") no-repeat center;
    background-size: cover;
 }
