@@ -1,34 +1,34 @@
 import { NavLink } from 'react-router-dom';
 import style from './Navbar.module.css';
 
-const setActive = ({ isActive }) => (isActive ? style.active : style.link);
+const setActive = ({ isActive }) => ({ color: isActive ? 'black' : 'white' });
 
 export default function Navbar() {
   return (
     <nav className={style.navbar}>
       <ul className={style.list}>
         <li>
-          <NavLink className={setActive} to="/profile">
+          <NavLink className={style.link} style={setActive} to="/profile">
             Profile
           </NavLink>
         </li>
         <li>
-          <NavLink className={setActive} to="/messages">
+          <NavLink className={style.link} style={setActive} to="/messages">
             Message
           </NavLink>
         </li>
         <li>
-          <NavLink className={setActive} to="/news">
+          <NavLink className={style.link} style={setActive} to="/news">
             News
           </NavLink>
         </li>
         <li>
-          <NavLink className={setActive} to="/music">
+          <NavLink className={style.link} style={setActive} to="/music">
             Music
           </NavLink>
         </li>
         <li>
-          <NavLink className={setActive} to="/setting">
+          <NavLink className={style.link} style={setActive} to="/setting">
             Setting
           </NavLink>
         </li>

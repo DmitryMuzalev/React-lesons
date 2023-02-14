@@ -12,18 +12,10 @@
 
 .link {
   text-decoration: none;
-  color: white;
   font-size: 18px;
   font-weight: 500;
 }
 
 .link:hover {
-  color: black;
   text-decoration: underline;
-}
-
-.active {
-  font-size: 18px;
-  font-weight: 500;
-  color: black;
 }
