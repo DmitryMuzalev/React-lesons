@@ -1,4 +1,4 @@
-import avatar from './avatar.png';
+import avatar from './avatar.svg';
 import like from './like.svg';
 
 import style from './Post.module.css';

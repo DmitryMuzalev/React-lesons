@@ -9,15 +9,12 @@
 
 .post__body {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   gap: 15px;
 }
 
 .avatar {
   width: 50px;
-}
-
-.text {
 }
 
 .post__like {
