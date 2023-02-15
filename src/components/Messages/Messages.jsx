@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import avatar from './avatar.svg';
 import style from './Messages.module.css';
 
@@ -8,40 +9,40 @@ export default function Messages() {
       <div className={style.messagesWrapper}>
         <ul className={style.personList}>
           <li>
-            <a className={style.person} href="#person">
+            <NavLink className={style.person} to="/messages/1">
               <img className={style.person__avatar} src={avatar} alt="avatar" />
               <p className={style.person__name}>Jacob</p>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a className={style.person} href="#person">
+            <NavLink className={style.person} to="/messages/2">
               <img className={style.person__avatar} src={avatar} alt="avatar" />
               <p className={style.person__name}>Oliver</p>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a className={style.person} href="#person">
+            <NavLink className={style.person} to="/messages/3">
               <img className={style.person__avatar} src={avatar} alt="avatar" />
               <p className={style.person__name}>Harry</p>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a className={style.person} href="#person">
+            <NavLink className={style.person} to="/messages/4">
               <img className={style.person__avatar} src={avatar} alt="avatar" />
               <p className={style.person__name}>Charley</p>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a className={style.person} href="#person">
+            <NavLink className={style.person} to="/messages/5">
               <img className={style.person__avatar} src={avatar} alt="avatar" />
               <p className={style.person__name}>Oscar</p>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a className={style.person} href="#person">
+            <NavLink className={style.person} to="/messages/6">
               <img className={style.person__avatar} src={avatar} alt="avatar" />
               <p className={style.person__name}>Jacob</p>
-            </a>
+            </NavLink>
           </li>
         </ul>
         <div className={style.messages}>
