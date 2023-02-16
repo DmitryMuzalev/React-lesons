@@ -1,8 +1,8 @@
 import avatar from './avatar.svg';
 import like from './like.svg';
 
-import style from './Post.module.css';
-export default function Post(props) {
+import style from './MyPost.module.css';
+export default function MyPost(props) {
   return (
     <div className={style.post}>
       <div className={style.post__body}>

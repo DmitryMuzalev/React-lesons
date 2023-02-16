@@ -1,5 +1,6 @@
-.banner{
-   height: 250px;
-   background: url("./banner.jpg") no-repeat center;
-   background-size: cover;
+.banner {
+  height: 250px;
+  background: url('./banner.jpg') no-repeat center;
+  background-size: cover;
+  margin: 0px 0px 40px 0px;
 }

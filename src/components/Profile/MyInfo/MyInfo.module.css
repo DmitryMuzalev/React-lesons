@@ -1,0 +1,31 @@
+.profile {
+  display: flex;
+  gap: 30px;
+}
+
+.profile__avatar img {
+  width: 150px;
+}
+
+.profile__info {
+}
+
+.profile__name {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0px 0px 15px 0px;
+}
+
+.profile__data {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.profile__data li p {
+  font-weight: 500;
+}
+
+.profile__data li p span {
+  font-weight: 400;
+}
