@@ -1,0 +1,42 @@
+.messages__item {
+  position: relative;
+  max-width: 350px;
+  background-color: white;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.messages__item:nth-child(odd) {
+  align-self: flex-end;
+  background-color: grey;
+  color: #ffffff;
+}
+
+.messages__item::after {
+  position: absolute;
+  top: -2px;
+  z-index: -1;
+  left: 0;
+  transform: translateX(-65%);
+  content: '';
+  border: 15px solid transparent;
+  border-top: 15px solid black;
+  border-right: 15px solid black;
+}
+
+.messages__item:nth-child(odd)::after {
+  display: none;
+}
+
+.messages__item:nth-child(odd)::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  z-index: -1;
+  right: 0;
+  transform: translateX(65%);
+  border: 15px solid transparent;
+  border-left: 15px solid black;
+  border-top: 15px solid black;
+}

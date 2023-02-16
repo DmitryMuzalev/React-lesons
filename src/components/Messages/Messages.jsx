@@ -1,21 +1,6 @@
-import { NavLink } from 'react-router-dom';
-import avatar from './avatar.svg';
+import Message from './Message/Message';
 import style from './Messages.module.css';
-
-const PersonItem = (props) => {
-  return (
-    <li>
-      <NavLink className={style.person} to={'/messages/' + props.id}>
-        <img className={style.person__avatar} src={avatar} alt="avatar" />
-        <p className={style.person__name}>{props.name}</p>
-      </NavLink>
-    </li>
-  );
-};
-
-const Message = (props) => {
-  return <div className={style.messages__item}>{props.text}</div>;
-};
+import PersonItem from './PersonItem/PersonItem';
 
 const userData = [
   { name: 'John', id: '1' },
@@ -25,11 +10,6 @@ const userData = [
   { name: 'Oscar', id: '5' },
   { name: 'Noah', id: '6' },
 ];
-
-const personsData = userData.map((user) => {
-  return <PersonItem id={user.id} name={user.name} />;
-});
-
 const messagesData = [
   {
     text: 'Id velit ut tortor pretium viverra suspendisse potenti nullam ac.Purus gravida quis blandit turpis cursus.',
@@ -68,6 +48,10 @@ const messagesData = [
     text: 'Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat.',
   },
 ];
+
+const personsData = userData.map((user) => {
+  return <PersonItem id={user.id} name={user.name} />;
+});
 
 const messagesHistory = messagesData.map((message) => {
   return <Message text={message.text} />;

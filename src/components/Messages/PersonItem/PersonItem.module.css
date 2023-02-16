@@ -1,0 +1,24 @@
+.person {
+  background-color: grey;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  transition: all 0.5s;
+}
+
+.person:hover {
+  background-color: black;
+}
+
+.person__avatar {
+  width: 50px;
+}
+
+.person__name {
+  font-size: 22px;
+  font-weight: 500;
+}
