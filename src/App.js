@@ -9,7 +9,7 @@ import Setting from './components/Setting/Setting';
 import News from './components/News/News';
 import Profile from './components/Profile/Profile';
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -17,8 +17,19 @@ function App() {
         <Navbar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/messages/*" element={<Messages />} />
+            <Route
+              path="/profile"
+              element={<Profile postsData={props.data.postsData} />}
+            />
+            <Route
+              path="/messages/*"
+              element={
+                <Messages
+                  messagesData={props.data.messagesData}
+                  userData={props.data.userData}
+                />
+              }
+            />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/setting" element={<Setting />} />
