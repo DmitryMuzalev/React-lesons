@@ -3,11 +3,11 @@ import style from './Messages.module.css';
 import PersonItem from './PersonItem/PersonItem';
 
 export default function Messages(props) {
-  const personsData = props.userData.map((user) => {
+  const personsData = props.messagesPage.persons.map((user) => {
     return <PersonItem id={user.id} name={user.name} />;
   });
 
-  const messagesHistory = props.messagesData.map((message) => {
+  const messagesHistory = props.messagesPage.messages.map((message) => {
     return <Message text={message.text} />;
   });
 

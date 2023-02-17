@@ -2,7 +2,7 @@ import MyPost from './MyPost/MyPost';
 import style from './MyPosts.module.css';
 
 export default function MyPosts(props) {
-  const postsHistory = props.postsData.map((post) => {
+  const postsHistory = props.posts.map((post) => {
     return <MyPost id={post.id} message={post.message} like={post.like} />;
   });
 

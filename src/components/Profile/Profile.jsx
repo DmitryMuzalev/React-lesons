@@ -7,7 +7,7 @@ export default function Profile(props) {
     <div>
       <div className={style.banner}></div>
       <MyInfo />
-      <MyPosts postsData={props.postsData} />
+      <MyPosts posts={props.profilePage.posts} />
     </div>
   );
 }
