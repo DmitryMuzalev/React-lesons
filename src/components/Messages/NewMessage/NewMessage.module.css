@@ -1,0 +1,20 @@
+.newMessage {
+  margin: 30px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newMessage__input {
+  padding: 10px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.newMessage__btn {
+  cursor: pointer;
+  padding: 5px 15px;
+  background-color: black;
+  color: white;
+  align-self: flex-end;
+}

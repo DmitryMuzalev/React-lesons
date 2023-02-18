@@ -45,27 +45,6 @@ const state = {
       {
         text: 'Ac orci phasellus egestas tellus rutrum tellus pellentesque eu. Ut morbi tincidunt augue interdum.',
       },
-      {
-        text: 'Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat.',
-      },
-      {
-        text: 'Id velit ut tortor pretium viverra suspendisse potenti nullam ac.Purus gravida quis blandit turpis cursus.',
-      },
-      {
-        text: 'Ut porttitor leo a diam sollicitudin tempor id eu nisl.',
-      },
-      {
-        text: 'Non sodales neque sodales ut etiam sit amet nisl. Morbi blandit cursus risus at ultrices mi tempus.',
-      },
-      {
-        text: 'Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat.',
-      },
-      {
-        text: 'Ac orci phasellus egestas tellus rutrum tellus pellentesque eu. Ut morbi tincidunt augue interdum.',
-      },
-      {
-        text: 'Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat.',
-      },
     ],
     persons: [
       { name: 'John', id: '1' },

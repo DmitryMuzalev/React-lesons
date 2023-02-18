@@ -1,5 +1,6 @@
 import Message from './Message/Message';
 import style from './Messages.module.css';
+import NewMessage from './NewMessage/NewMessage';
 import PersonItem from './PersonItem/PersonItem';
 
 export default function Messages(props) {
@@ -16,7 +17,10 @@ export default function Messages(props) {
       <h2>Messages</h2>
       <div className={style.messagesWrapper}>
         <ul className={style.personList}>{personsData}</ul>
-        <div className={style.messages}>{messagesHistory}</div>
+        <div className={style.messages}>
+          {messagesHistory}
+          <NewMessage />
+        </div>
       </div>
     </div>
   );
