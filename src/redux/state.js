@@ -1,3 +1,5 @@
+import { rerenderDOM } from '../render';
+
 const state = {
   profilePage: {
     posts: [
@@ -66,6 +68,7 @@ function createNewPost(messageNewPost) {
     like: 0,
   };
   state.profilePage.posts.push(newPost);
+  rerenderDOM(state);
 }
 
 function createNewMessage(textNewMessage) {
@@ -73,6 +76,7 @@ function createNewMessage(textNewMessage) {
     text: textNewMessage,
   };
   state.messagesPage.messages.push(newMessage);
+  rerenderDOM(state);
 }
 
 export { createNewPost, createNewMessage };
