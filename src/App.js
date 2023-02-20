@@ -18,11 +18,21 @@ function App(props) {
         <Routes>
           <Route
             path="/profile"
-            element={<Profile profilePage={props.state.profilePage} />}
+            element={
+              <Profile
+                profilePage={props.state.profilePage}
+                createNewPost={props.createNewPost}
+              />
+            }
           />
           <Route
             path="/messages/*"
-            element={<Messages messagesPage={props.state.messagesPage} />}
+            element={
+              <Messages
+                messagesPage={props.state.messagesPage}
+                createNewMessage={props.createNewMessage}
+              />
+            }
           />
           <Route path="/news" element={<News />} />
           <Route path="/music" element={<Music />} />

@@ -6,11 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import state from './redux/state';
 import { BrowserRouter } from 'react-router-dom';
 
+import { createNewPost, createNewMessage } from './redux/state';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App state={state} />
+      <App
+        state={state}
+        createNewPost={createNewPost}
+        createNewMessage={createNewMessage}
+      />
     </BrowserRouter>
   </React.StrictMode>
 );

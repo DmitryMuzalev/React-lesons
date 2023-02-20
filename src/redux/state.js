@@ -2,28 +2,28 @@ const state = {
   profilePage: {
     posts: [
       {
-        id: '1',
+        id: 1,
         message:
           'Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras. Elit eget gravida cum sociis natoque penatibus et magnis.',
-        like: '5',
+        like: 5,
       },
       {
-        id: '2',
+        id: 2,
         message:
           'Elementum curabitur vitae nunc sed velit dignissim sodales ut eu. Augue eget arcu dictum varius duis at consectetur.',
-        like: '13',
+        like: 13,
       },
       {
-        id: '3',
+        id: 3,
         message:
           'Sed enim ut sem viverra aliquet eget. Eu scelerisque felis imperdiet proin fermentum leo vel orci. Ultrices gravida dictum fusce ut placerat orci nulla pellentesque.',
-        like: '20',
+        like: 20,
       },
       {
-        id: '4',
+        id: 4,
         message:
           'Leo integer malesuada nunc vel risus commodo viverra maecenas.',
-        like: '17',
+        like: 17,
       },
     ],
   },
@@ -47,14 +47,32 @@ const state = {
       },
     ],
     persons: [
-      { name: 'John', id: '1' },
-      { name: 'Oliver', id: '2' },
-      { name: 'Harry', id: '3' },
-      { name: 'Charley', id: '4' },
-      { name: 'Oscar', id: '5' },
-      { name: 'Noah', id: '6' },
+      { name: 'John', id: 1 },
+      { name: 'Oliver', id: 2 },
+      { name: 'Harry', id: 3 },
+      { name: 'Charley', id: 4 },
+      { name: 'Oscar', id: 5 },
+      { name: 'Noah', id: 6 },
     ],
   },
 };
 
 export default state;
+
+function createNewPost(messageNewPost) {
+  let newPost = {
+    id: state.profilePage.posts.length + 1,
+    message: messageNewPost,
+    like: 0,
+  };
+  state.profilePage.posts.push(newPost);
+}
+
+function createNewMessage(textNewMessage) {
+  let newMessage = {
+    text: textNewMessage,
+  };
+  state.messagesPage.messages.push(newMessage);
+}
+
+export { createNewPost, createNewMessage };

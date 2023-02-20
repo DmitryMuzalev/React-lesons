@@ -10,7 +10,7 @@ export default function MyPosts(props) {
   let textNewPost = React.createRef();
 
   const handlerClickBtn = () => {
-    alert(textNewPost.current.value);
+    props.createNewPost(textNewPost.current.value);
   };
 
   return (

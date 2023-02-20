@@ -19,7 +19,7 @@ export default function Messages(props) {
         <ul className={style.personList}>{personsData}</ul>
         <div className={style.messages}>
           {messagesHistory}
-          <NewMessage />
+          <NewMessage createNewMessage={props.createNewMessage} />
         </div>
       </div>
     </div>
