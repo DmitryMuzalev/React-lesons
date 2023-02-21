@@ -1,5 +1,3 @@
-import { rerenderDOM } from '../render';
-
 const state = {
   profilePage: {
     posts: [
@@ -63,6 +61,8 @@ const state = {
 
 export default state;
 
+let rerenderDOM;
+
 function createNewPost() {
   let newPost = {
     id: state.profilePage.posts.length + 1,
@@ -93,9 +93,14 @@ function changeMessagesInput(text) {
   rerenderDOM(state);
 }
 
+function subscriber(observer) {
+  rerenderDOM = observer;
+}
+
 export {
   createNewPost,
   createNewMessage,
   changeProfileInput,
   changeMessagesInput,
+  subscriber,
 };
