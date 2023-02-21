@@ -19,7 +19,11 @@ export default function Messages(props) {
         <ul className={style.personList}>{personsData}</ul>
         <div className={style.messages}>
           {messagesHistory}
-          <NewMessage createNewMessage={props.createNewMessage} />
+          <NewMessage
+            valueInput={props.messagesPage.valueInput}
+            createNewMessage={props.createNewMessage}
+            changeMessagesInput={props.changeMessagesInput}
+          />
         </div>
       </div>
     </div>

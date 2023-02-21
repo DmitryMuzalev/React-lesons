@@ -5,7 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
-import { createNewPost, createNewMessage } from './redux/state';
+import {
+  createNewPost,
+  createNewMessage,
+  changeProfileInput,
+  changeMessagesInput,
+} from './redux/state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -17,6 +22,8 @@ export function rerenderDOM(state) {
           state={state}
           createNewPost={createNewPost}
           createNewMessage={createNewMessage}
+          changeProfileInput={changeProfileInput}
+          changeMessagesInput={changeMessagesInput}
         />
       </BrowserRouter>
     </React.StrictMode>

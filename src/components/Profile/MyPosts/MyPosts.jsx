@@ -10,9 +10,12 @@ export default function MyPosts(props) {
   let textNewPost = React.createRef();
 
   const handlerClickBtn = () => {
+    props.createNewPost();
+  };
+
+  const handlerChangeValueTextarea = () => {
     let text = textNewPost.current.value;
-    textNewPost.current.value = '';
-    props.createNewPost(text);
+    props.changeProfileInput(text);
   };
 
   return (
@@ -23,6 +26,8 @@ export default function MyPosts(props) {
           ref={textNewPost}
           className={style.input}
           placeholder="your news..."
+          value={props.valueInput}
+          onChange={handlerChangeValueTextarea}
         ></textarea>
         <button className={style.button} onClick={handlerClickBtn}>
           Send

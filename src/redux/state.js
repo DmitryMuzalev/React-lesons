@@ -28,6 +28,7 @@ const state = {
         like: 17,
       },
     ],
+    valueInput: '',
   },
 
   messagesPage: {
@@ -48,6 +49,7 @@ const state = {
         text: 'Ac orci phasellus egestas tellus rutrum tellus pellentesque eu. Ut morbi tincidunt augue interdum.',
       },
     ],
+    valueInput: '',
     persons: [
       { name: 'John', id: 1 },
       { name: 'Oliver', id: 2 },
@@ -61,22 +63,39 @@ const state = {
 
 export default state;
 
-function createNewPost(messageNewPost) {
+function createNewPost() {
   let newPost = {
     id: state.profilePage.posts.length + 1,
-    message: messageNewPost,
+    message: state.profilePage.valueInput,
     like: 0,
   };
   state.profilePage.posts.push(newPost);
+  state.profilePage.valueInput = '';
   rerenderDOM(state);
 }
 
-function createNewMessage(textNewMessage) {
+function createNewMessage() {
   let newMessage = {
-    text: textNewMessage,
+    text: state.messagesPage.valueInput,
   };
   state.messagesPage.messages.push(newMessage);
+  state.messagesPage.valueInput = '';
   rerenderDOM(state);
 }
 
-export { createNewPost, createNewMessage };
+function changeProfileInput(text) {
+  state.profilePage.valueInput = text;
+  rerenderDOM(state);
+}
+
+function changeMessagesInput(text) {
+  state.messagesPage.valueInput = text;
+  rerenderDOM(state);
+}
+
+export {
+  createNewPost,
+  createNewMessage,
+  changeProfileInput,
+  changeMessagesInput,
+};

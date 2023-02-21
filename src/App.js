@@ -22,6 +22,8 @@ function App(props) {
               <Profile
                 profilePage={props.state.profilePage}
                 createNewPost={props.createNewPost}
+                changeProfileInput={props.changeProfileInput}
+                changeMessagesInput={props.changeMessagesInput}
               />
             }
           />
@@ -31,6 +33,7 @@ function App(props) {
               <Messages
                 messagesPage={props.state.messagesPage}
                 createNewMessage={props.createNewMessage}
+                changeMessagesInput={props.changeMessagesInput}
               />
             }
           />

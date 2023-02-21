@@ -9,7 +9,9 @@ export default function Profile(props) {
       <MyInfo />
       <MyPosts
         posts={props.profilePage.posts}
+        valueInput={props.profilePage.valueInput}
         createNewPost={props.createNewPost}
+        changeProfileInput={props.changeProfileInput}
       />
     </div>
   );
