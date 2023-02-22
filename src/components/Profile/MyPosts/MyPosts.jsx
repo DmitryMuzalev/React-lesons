@@ -1,4 +1,8 @@
 import React from 'react';
+import {
+  changeProfileInputActionCreator,
+  createNewPostActionCreator,
+} from '../../../redux/state';
 import MyPost from './MyPost/MyPost';
 import style from './MyPosts.module.css';
 
@@ -11,14 +15,12 @@ export default function MyPosts(props) {
 
   const handlerClickBtn = () => {
     debugger;
-    let action = { type: 'CREATE-NEW-POST' };
-    props.dispatch(action);
+    props.dispatch(createNewPostActionCreator());
   };
 
   const handlerChangeValueTextarea = () => {
     let text = textNewPost.current.value;
-    let action = { type: 'CHANGE-PROFILE-INPUT', text: text };
-    props.dispatch(action);
+    props.dispatch(changeProfileInputActionCreator(text));
   };
 
   return (

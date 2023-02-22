@@ -1,3 +1,21 @@
+//_ActionType:
+const CHANGE_PROFILE_INPUT = 'CHANGE-PROFILE-INPUT';
+const CREATE_NEW_POST = 'CREATE-NEW-POST';
+const CREATE_NEW_MESSAGE = 'CREATE-NEW-MESSAGE';
+const CHANGE_MESSAGES_INPUT = 'CHANGE-MESSAGES-INPUT';
+
+//_ActionCreator:
+const changeProfileInputActionCreator = (text) => ({
+  type: CHANGE_PROFILE_INPUT,
+  text: text,
+});
+const createNewPostActionCreator = () => ({ type: CREATE_NEW_POST });
+const createNewMessageActionCreator = () => ({ type: CREATE_NEW_MESSAGE });
+const changeMessageInputActionCreator = (text) => ({
+  type: CHANGE_MESSAGES_INPUT,
+  text: text,
+});
+
 const store = {
   _state: {
     profilePage: {
@@ -96,3 +114,10 @@ const store = {
 };
 
 export default store;
+
+export {
+  changeProfileInputActionCreator,
+  createNewPostActionCreator,
+  createNewMessageActionCreator,
+  changeMessageInputActionCreator,
+};
