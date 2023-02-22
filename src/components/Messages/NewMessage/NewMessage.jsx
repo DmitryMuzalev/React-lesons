@@ -5,12 +5,14 @@ export default function NewMessage(props) {
   let newMessageText = React.createRef();
 
   const handlerClickBtn = () => {
-    props.createNewMessage();
+    let action = { type: 'CREATE-NEW-MESSAGE' };
+    props.dispatch(action);
   };
 
   const handlerChangeValueTextarea = () => {
     let text = newMessageText.current.value;
-    props.changeMessagesInput(text);
+    let action = { type: 'CHANGE-MESSAGES-INPUT', text: text };
+    props.dispatch(action);
   };
 
   return (

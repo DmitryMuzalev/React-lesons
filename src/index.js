@@ -12,13 +12,7 @@ export function rerenderDOM(state) {
   return root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App
-          state={state}
-          createNewPost={store.createNewPost.bind(store)}
-          createNewMessage={store.createNewMessage.bind(store)}
-          changeProfileInput={store.changeProfileInput.bind(store)}
-          changeMessagesInput={store.changeMessagesInput.bind(store)}
-        />
+        <App state={state} dispatch={store.dispatch.bind(store)} />
       </BrowserRouter>
     </React.StrictMode>
   );

@@ -21,9 +21,7 @@ function App(props) {
             element={
               <Profile
                 profilePage={props.state.profilePage}
-                createNewPost={props.createNewPost}
-                changeProfileInput={props.changeProfileInput}
-                changeMessagesInput={props.changeMessagesInput}
+                dispatch={props.dispatch}
               />
             }
           />
@@ -32,8 +30,7 @@ function App(props) {
             element={
               <Messages
                 messagesPage={props.state.messagesPage}
-                createNewMessage={props.createNewMessage}
-                changeMessagesInput={props.changeMessagesInput}
+                dispatch={props.dispatch}
               />
             }
           />

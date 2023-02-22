@@ -21,8 +21,7 @@ export default function Messages(props) {
           {messagesHistory}
           <NewMessage
             valueInput={props.messagesPage.valueInput}
-            createNewMessage={props.createNewMessage}
-            changeMessagesInput={props.changeMessagesInput}
+            dispatch={props.dispatch}
           />
         </div>
       </div>

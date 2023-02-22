@@ -7,12 +7,7 @@ export default function Profile(props) {
     <div>
       <div className={style.banner}></div>
       <MyInfo />
-      <MyPosts
-        posts={props.profilePage.posts}
-        valueInput={props.profilePage.valueInput}
-        createNewPost={props.createNewPost}
-        changeProfileInput={props.changeProfileInput}
-      />
+      <MyPosts profilePage={props.profilePage} dispatch={props.dispatch} />
     </div>
   );
 }

@@ -3,19 +3,22 @@ import MyPost from './MyPost/MyPost';
 import style from './MyPosts.module.css';
 
 export default function MyPosts(props) {
-  const postsHistory = props.posts.map((post) => {
+  const postsHistory = props.profilePage.posts.map((post) => {
     return <MyPost id={post.id} message={post.message} like={post.like} />;
   });
 
   let textNewPost = React.createRef();
 
   const handlerClickBtn = () => {
-    props.createNewPost();
+    debugger;
+    let action = { type: 'CREATE-NEW-POST' };
+    props.dispatch(action);
   };
 
   const handlerChangeValueTextarea = () => {
     let text = textNewPost.current.value;
-    props.changeProfileInput(text);
+    let action = { type: 'CHANGE-PROFILE-INPUT', text: text };
+    props.dispatch(action);
   };
 
   return (
@@ -26,7 +29,7 @@ export default function MyPosts(props) {
           ref={textNewPost}
           className={style.input}
           placeholder="your news..."
-          value={props.valueInput}
+          value={props.profilePage.valueInput}
           onChange={handlerChangeValueTextarea}
         ></textarea>
         <button className={style.button} onClick={handlerClickBtn}>

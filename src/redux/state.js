@@ -59,38 +59,39 @@ const store = {
       ],
     },
   },
+  _rerenderDOM() {},
+
   getState() {
     return this._state;
   },
-  _rerenderDOM() {},
-  createNewPost() {
-    let newPost = {
-      id: this._state.profilePage.posts.length + 1,
-      message: this._state.profilePage.valueInput,
-      like: 0,
-    };
-    this._state.profilePage.posts.push(newPost);
-    this._state.profilePage.valueInput = '';
-    this._rerenderDOM(this._state);
-  },
-  createNewMessage() {
-    let newMessage = {
-      text: this._state.messagesPage.valueInput,
-    };
-    this._state.messagesPage.messages.push(newMessage);
-    this._state.messagesPage.valueInput = '';
-    this._rerenderDOM(this._state);
-  },
-  changeProfileInput(text) {
-    this._state.profilePage.valueInput = text;
-    this._rerenderDOM(this._state);
-  },
-  changeMessagesInput(text) {
-    this._state.messagesPage.valueInput = text;
-    this._rerenderDOM(this._state);
-  },
   subscriber(observer) {
     this._rerenderDOM = observer;
+  },
+
+  dispatch(action) {
+    if (action.type === 'CREATE-NEW-POST') {
+      let newPost = {
+        id: this._state.profilePage.posts.length + 1,
+        message: this._state.profilePage.valueInput,
+        like: 0,
+      };
+      this._state.profilePage.posts.push(newPost);
+      this._state.profilePage.valueInput = '';
+      this._rerenderDOM(this._state);
+    } else if (action.type === 'CREATE-NEW-MESSAGE') {
+      let newMessage = {
+        text: this._state.messagesPage.valueInput,
+      };
+      this._state.messagesPage.messages.push(newMessage);
+      this._state.messagesPage.valueInput = '';
+      this._rerenderDOM(this._state);
+    } else if (action.type === 'CHANGE-PROFILE-INPUT') {
+      this._state.profilePage.valueInput = action.text;
+      this._rerenderDOM(this._state);
+    } else if (action.type === 'CHANGE-MESSAGES-INPUT') {
+      this._state.messagesPage.valueInput = action.text;
+      this._rerenderDOM(this._state);
+    }
   },
 };
 
