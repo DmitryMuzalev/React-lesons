@@ -1,20 +1,5 @@
-//_ActionType:
-const CHANGE_PROFILE_INPUT = 'CHANGE-PROFILE-INPUT';
-const CREATE_NEW_POST = 'CREATE-NEW-POST';
-const CREATE_NEW_MESSAGE = 'CREATE-NEW-MESSAGE';
-const CHANGE_MESSAGES_INPUT = 'CHANGE-MESSAGES-INPUT';
-
-//_ActionCreator:
-const changeProfileInputActionCreator = (text) => ({
-  type: CHANGE_PROFILE_INPUT,
-  text: text,
-});
-const createNewPostActionCreator = () => ({ type: CREATE_NEW_POST });
-const createNewMessageActionCreator = () => ({ type: CREATE_NEW_MESSAGE });
-const changeMessageInputActionCreator = (text) => ({
-  type: CHANGE_MESSAGES_INPUT,
-  text: text,
-});
+import messagesReducer from './reducers/messagesReducer';
+import profileReducer from './reducers/profileReducer';
 
 const store = {
   _state: {
@@ -87,37 +72,10 @@ const store = {
   },
 
   dispatch(action) {
-    if (action.type === 'CREATE-NEW-POST') {
-      let newPost = {
-        id: this._state.profilePage.posts.length + 1,
-        message: this._state.profilePage.valueInput,
-        like: 0,
-      };
-      this._state.profilePage.posts.push(newPost);
-      this._state.profilePage.valueInput = '';
-      this._rerenderDOM(this._state);
-    } else if (action.type === 'CREATE-NEW-MESSAGE') {
-      let newMessage = {
-        text: this._state.messagesPage.valueInput,
-      };
-      this._state.messagesPage.messages.push(newMessage);
-      this._state.messagesPage.valueInput = '';
-      this._rerenderDOM(this._state);
-    } else if (action.type === 'CHANGE-PROFILE-INPUT') {
-      this._state.profilePage.valueInput = action.text;
-      this._rerenderDOM(this._state);
-    } else if (action.type === 'CHANGE-MESSAGES-INPUT') {
-      this._state.messagesPage.valueInput = action.text;
-      this._rerenderDOM(this._state);
-    }
+    profileReducer(this._state.profilePage, action);
+    messagesReducer(this._state.messagesPage, action);
+    this._rerenderDOM(this._state);
   },
 };
 
 export default store;
-
-export {
-  changeProfileInputActionCreator,
-  createNewPostActionCreator,
-  createNewMessageActionCreator,
-  changeMessageInputActionCreator,
-};
