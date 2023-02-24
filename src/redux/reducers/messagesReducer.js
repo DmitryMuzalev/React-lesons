@@ -1,6 +1,6 @@
 //_ActionType:
-const CREATE_NEW_MESSAGE = 'CREATE-NEW-MESSAGE';
-const CHANGE_MESSAGES_INPUT = 'CHANGE-MESSAGES-INPUT';
+const CREATE_NEW_MESSAGE = 'CREATE_NEW_MESSAGE';
+const CHANGE_MESSAGES_INPUT = 'CHANGE_MESSAGES_INPUT';
 
 //_ActionCreator:
 const createNewMessageCreator = () => ({ type: CREATE_NEW_MESSAGE });
@@ -9,7 +9,36 @@ const changeMessageInputCreator = (text) => ({
   text: text,
 });
 
-export default function messagesReducer(state, action) {
+const initialState = {
+  messages: [
+    {
+      text: 'Id velit ut tortor pretium viverra suspendisse potenti nullam ac.Purus gravida quis blandit turpis cursus.',
+    },
+    {
+      text: 'Ut porttitor leo a diam sollicitudin tempor id eu nisl.',
+    },
+    {
+      text: 'Non sodales neque sodales ut etiam sit amet nisl. Morbi blandit cursus risus at ultrices mi tempus.',
+    },
+    {
+      text: 'Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat.',
+    },
+    {
+      text: 'Ac orci phasellus egestas tellus rutrum tellus pellentesque eu. Ut morbi tincidunt augue interdum.',
+    },
+  ],
+  valueInput: '',
+  persons: [
+    { name: 'John', id: 1 },
+    { name: 'Oliver', id: 2 },
+    { name: 'Harry', id: 3 },
+    { name: 'Charley', id: 4 },
+    { name: 'Oscar', id: 5 },
+    { name: 'Noah', id: 6 },
+  ],
+};
+
+export default function messagesReducer(state = initialState, action) {
   switch (action.type) {
     case CREATE_NEW_MESSAGE:
       let newMessage = {
