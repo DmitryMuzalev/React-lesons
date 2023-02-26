@@ -4,11 +4,11 @@ import NewMessage from './NewMessage/NewMessage';
 import PersonItem from './PersonItem/PersonItem';
 
 export default function Messages(props) {
-  const personsData = props.messagesPage.persons.map((user) => {
+  const personsData = props.persons.map((user) => {
     return <PersonItem id={user.id} name={user.name} />;
   });
 
-  const messagesHistory = props.messagesPage.messages.map((message) => {
+  const messagesHistory = props.messages.map((message) => {
     return <Message text={message.text} />;
   });
 
@@ -20,8 +20,9 @@ export default function Messages(props) {
         <div className={style.messages}>
           {messagesHistory}
           <NewMessage
-            valueInput={props.messagesPage.valueInput}
-            dispatch={props.dispatch}
+            valueInput={props.valueInput}
+            createNewMessage={props.createNewMessage}
+            changeMessageInput={props.changeMessageInput}
           />
         </div>
       </div>

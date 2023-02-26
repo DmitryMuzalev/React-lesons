@@ -1,26 +1,21 @@
 import React from 'react';
-import {
-  changeProfileInputCreator,
-  createNewPostCreator,
-} from '../../../redux/reducers/profileReducer';
-
 import MyPost from './MyPost/MyPost';
 import style from './MyPosts.module.css';
 
 export default function MyPosts(props) {
-  const postsHistory = props.profilePage.posts.map((post) => {
+  const postsHistory = props.posts.map((post) => {
     return <MyPost id={post.id} message={post.message} like={post.like} />;
   });
 
   let textNewPost = React.createRef();
 
   const handlerClickBtn = () => {
-    props.dispatch(createNewPostCreator());
+    props.onHandlerClickBtn();
   };
 
   const handlerChangeValueTextarea = () => {
     let text = textNewPost.current.value;
-    props.dispatch(changeProfileInputCreator(text));
+    props.onHandlerChangeValueTextarea(text);
   };
 
   return (
@@ -31,7 +26,7 @@ export default function MyPosts(props) {
           ref={textNewPost}
           className={style.input}
           placeholder="your news..."
-          value={props.profilePage.valueInput}
+          value={props.valueInput}
           onChange={handlerChangeValueTextarea}
         ></textarea>
         <button className={style.button} onClick={handlerClickBtn}>

@@ -1,21 +1,16 @@
 import React from 'react';
-import {
-  changeMessageInputCreator,
-  createNewMessageCreator,
-} from '../../../redux/reducers/messagesReducer';
-
 import style from './NewMessage.module.css';
 
 export default function NewMessage(props) {
   let newMessageText = React.createRef();
 
   const handlerClickBtn = () => {
-    props.dispatch(createNewMessageCreator());
+    props.createNewMessage();
   };
 
   const handlerChangeValueTextarea = () => {
     let text = newMessageText.current.value;
-    props.dispatch(changeMessageInputCreator(text));
+    props.changeMessageInput(text);
   };
 
   return (

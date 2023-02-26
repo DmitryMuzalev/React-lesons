@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
 import Header from './components/Header/Header';
-import Messages from './components/Messages/Messages';
+import MessagesContainer from './components/Messages/MessagesContainer';
 import Navbar from './components/Navbar/Navbar';
 import Music from './components/Music/Music';
 import Setting from './components/Setting/Setting';
@@ -16,23 +16,10 @@ function App(props) {
       <Navbar />
       <div className="app-wrapper-content">
         <Routes>
-          <Route
-            path="/profile"
-            element={
-              <Profile
-                profilePage={props.state.profilePage}
-                dispatch={props.dispatch}
-              />
-            }
-          />
+          <Route path="/profile" element={<Profile store={props.store} />} />
           <Route
             path="/messages/*"
-            element={
-              <Messages
-                messagesPage={props.state.messagesPage}
-                dispatch={props.dispatch}
-              />
-            }
+            element={<MessagesContainer store={props.store} />}
           />
           <Route path="/news" element={<News />} />
           <Route path="/music" element={<Music />} />
