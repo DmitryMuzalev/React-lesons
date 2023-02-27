@@ -1,32 +1,28 @@
-import {
-  changeMessageInputCreator,
-  createNewMessageCreator,
-} from '../../redux/reducers/messagesReducer';
-import StoreContext from '../../StoreContext';
+import { connect } from 'react-redux';
 import Messages from './Messages';
 
-export default function MessagesContainer() {
-  return (
-    <StoreContext.Consumer>
-      {(store) => {
-        const state = store.getState();
-        const onHandlerClickBtn = () => {
-          store.dispatch(createNewMessageCreator());
-        };
+const mapStateToProps = (state) => {
+  return {
+    persons: state.messagesPage.persons,
+    messages: state.messagesPage.messages,
+    valueInput: state.messagesPage.valueInput,
+  };
+};
 
-        const onHandlerChangeValueTextarea = (text) => {
-          store.dispatch(changeMessageInputCreator(text));
-        };
-        return (
-          <Messages
-            persons={state.messagesPage.persons}
-            messages={state.messagesPage.messages}
-            valueInput={state.messagesPage.valueInput}
-            createNewMessage={onHandlerClickBtn}
-            changeMessageInput={onHandlerChangeValueTextarea}
-          />
-        );
-      }}
-    </StoreContext.Consumer>
-  );
-}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createNewMessage: () => {
+      dispatch.createNewMessageCreator();
+    },
+    changeMessageInput: (text) => {
+      dispatch.changeMessageInputCreator(text);
+    },
+  };
+};
+
+const MessagesContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Messages);
+
+export default MessagesContainer;

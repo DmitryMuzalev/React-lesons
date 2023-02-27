@@ -1,32 +1,24 @@
-import React from 'react';
-import {
-  changeProfileInputCreator,
-  createNewPostCreator,
-} from '../../../redux/reducers/profileReducer';
-import StoreContext from '../../../StoreContext';
+import { connect } from 'react-redux';
 import MyPosts from './MyPosts';
 
-export default function MyPostsContainer() {
-  return (
-    <StoreContext.Consumer>
-      {(store) => {
-        const state = store.getState();
-        const handlerClickBtn = () => {
-          store.dispatch(createNewPostCreator());
-        };
-        const handlerChangeValueTextarea = (text) => {
-          store.dispatch(changeProfileInputCreator(text));
-        };
+const mapStateToProps = (state) => {
+  return {
+    posts: state.profilePage.posts,
+    valueInput: state.profilePage.valueInput,
+  };
+};
 
-        return (
-          <MyPosts
-            onHandlerClickBtn={handlerClickBtn}
-            onHandlerChangeValueTextarea={handlerChangeValueTextarea}
-            posts={state.profilePage.posts}
-            valueInput={state.profilePage.valueInput}
-          />
-        );
-      }}
-    </StoreContext.Consumer>
-  );
-}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onHandlerChangeValueTextarea: () => {
+      dispatch.createNewPostCreator();
+    },
+    onHandlerClickBtn: (text) => {
+      dispatch.changeProfileInputCreator(text);
+    },
+  };
+};
+
+const MyPostsContainer = connect(mapStateToProps, mapDispatchToProps)(MyPosts);
+
+export default MyPostsContainer;

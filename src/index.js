@@ -5,25 +5,24 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import StoreContext from './StoreContext';
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-export function rerenderDOM(state) {
+export function rerenderDOM() {
   return root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <StoreContext.Provider value={store}>
+        <Provider store={store}>
           <App />
-        </StoreContext.Provider>
+        </Provider>
       </BrowserRouter>
     </React.StrictMode>
   );
 }
 
 store.subscribe(() => {
-  let state = store.getState();
-  rerenderDOM(state);
+  rerenderDOM();
 });
 
 rerenderDOM(store.getState());
