@@ -7,7 +7,7 @@ export default function Profile(props) {
     <div>
       <div className={style.banner}></div>
       <MyInfo />
-      <MyPostsContainer store={props.store} />
+      <MyPostsContainer />
     </div>
   );
 }
