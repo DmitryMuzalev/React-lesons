@@ -40,16 +40,23 @@ const initialState = {
 
 export default function messagesReducer(state = initialState, action) {
   switch (action.type) {
-    case CREATE_NEW_MESSAGE:
+    case CREATE_NEW_MESSAGE: {
+      const newState = { ...state };
+      newState.messages = [...state.messages];
       let newMessage = {
         text: state.valueInput,
       };
-      state.messages.push(newMessage);
-      state.valueInput = '';
-      return state;
-    case CHANGE_MESSAGES_INPUT:
-      state.valueInput = action.text;
-      return state;
+      newState.messages.push(newMessage);
+      newState.valueInput = '';
+      return newState;
+    }
+
+    case CHANGE_MESSAGES_INPUT: {
+      const newState = { ...state };
+      newState.valueInput = action.text;
+      return newState;
+    }
+
     default:
       return state;
   }

@@ -1,4 +1,8 @@
 import { connect } from 'react-redux';
+import {
+  changeProfileInputCreator,
+  createNewPostCreator,
+} from '../../../redux/reducers/profileReducer';
 import MyPosts from './MyPosts';
 
 const mapStateToProps = (state) => {
@@ -10,11 +14,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onHandlerChangeValueTextarea: () => {
-      dispatch.createNewPostCreator();
+    onHandlerClickBtn: () => {
+      dispatch(createNewPostCreator());
     },
-    onHandlerClickBtn: (text) => {
-      dispatch.changeProfileInputCreator(text);
+    onHandlerChangeValueTextarea: (text) => {
+      dispatch(changeProfileInputCreator(text));
     },
   };
 };

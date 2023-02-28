@@ -38,18 +38,25 @@ const initialState = {
 
 export default function profileReducer(state = initialState, action) {
   switch (action.type) {
-    case CREATE_NEW_POST:
+    case CREATE_NEW_POST: {
+      let newState = { ...state };
+      newState.posts = [...state.posts];
       let newPost = {
         id: state.posts.length + 1,
         message: state.valueInput,
         like: 0,
       };
-      state.posts.push(newPost);
-      state.valueInput = '';
-      return state;
-    case CHANGE_PROFILE_INPUT:
-      state.valueInput = action.text;
-      return state;
+      newState.posts.push(newPost);
+      newState.valueInput = '';
+      return newState;
+    }
+
+    case CHANGE_PROFILE_INPUT: {
+      let newState = { ...state };
+      newState.valueInput = action.text;
+      return newState;
+    }
+
     default:
       return state;
   }

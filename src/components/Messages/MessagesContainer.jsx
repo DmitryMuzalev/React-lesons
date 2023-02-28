@@ -1,4 +1,8 @@
 import { connect } from 'react-redux';
+import {
+  changeMessageInputCreator,
+  createNewMessageCreator,
+} from '../../redux/reducers/messagesReducer';
 import Messages from './Messages';
 
 const mapStateToProps = (state) => {
@@ -12,10 +16,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     createNewMessage: () => {
-      dispatch.createNewMessageCreator();
+      dispatch(createNewMessageCreator());
     },
     changeMessageInput: (text) => {
-      dispatch.changeMessageInputCreator(text);
+      dispatch(changeMessageInputCreator(text));
     },
   };
 };
