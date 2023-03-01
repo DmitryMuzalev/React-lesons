@@ -7,7 +7,7 @@ export default function MyInfo() {
       <div className={style.profile__avatar}>
         <img src={avatar} alt="avatar" />
       </div>
-      <duv className={style.profile__info}>
+      <div className={style.profile__info}>
         <p className={style.profile__name}>Benjamin</p>
         <ul className={style.profile__data}>
           <li>
@@ -31,7 +31,7 @@ export default function MyInfo() {
             </p>
           </li>
         </ul>
-      </duv>
+      </div>
     </div>
   );
 }

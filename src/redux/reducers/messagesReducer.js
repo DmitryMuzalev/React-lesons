@@ -12,18 +12,20 @@ const changeMessageInputCreator = (text) => ({
 const initialState = {
   messages: [
     {
+      id: 1,
       text: 'Id velit ut tortor pretium viverra suspendisse potenti nullam ac.Purus gravida quis blandit turpis cursus.',
     },
+    { id: 2, text: 'Ut porttitor leo a diam sollicitudin tempor id eu nisl.' },
     {
-      text: 'Ut porttitor leo a diam sollicitudin tempor id eu nisl.',
-    },
-    {
+      id: 3,
       text: 'Non sodales neque sodales ut etiam sit amet nisl. Morbi blandit cursus risus at ultrices mi tempus.',
     },
     {
+      id: 4,
       text: 'Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat.',
     },
     {
+      id: 5,
       text: 'Ac orci phasellus egestas tellus rutrum tellus pellentesque eu. Ut morbi tincidunt augue interdum.',
     },
   ],
@@ -40,21 +42,18 @@ const initialState = {
 
 export default function messagesReducer(state = initialState, action) {
   switch (action.type) {
-    case CREATE_NEW_MESSAGE: {
-      const newState = { ...state };
-      newState.messages = [...state.messages];
-      let newMessage = {
-        text: state.valueInput,
+    case CREATE_NEW_MESSAGE:
+      return {
+        ...state,
+        messages: [
+          ...state.messages,
+          { id: state.messages.length + 1, text: state.valueInput },
+        ],
+        valueInput: '',
       };
-      newState.messages.push(newMessage);
-      newState.valueInput = '';
-      return newState;
-    }
 
     case CHANGE_MESSAGES_INPUT: {
-      const newState = { ...state };
-      newState.valueInput = action.text;
-      return newState;
+      return { ...state, valueInput: action.text };
     }
 
     default:

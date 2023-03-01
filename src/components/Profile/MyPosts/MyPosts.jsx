@@ -4,7 +4,14 @@ import style from './MyPosts.module.css';
 
 export default function MyPosts(props) {
   const postsHistory = props.posts.map((post) => {
-    return <MyPost id={post.id} message={post.message} like={post.like} />;
+    return (
+      <MyPost
+        id={post.id}
+        message={post.message}
+        like={post.like}
+        key={post.id}
+      />
+    );
   });
 
   let textNewPost = React.createRef();
