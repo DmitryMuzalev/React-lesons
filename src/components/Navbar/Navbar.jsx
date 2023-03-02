@@ -32,6 +32,11 @@ export default function Navbar() {
             Setting
           </NavLink>
         </li>
+        <li>
+          <NavLink className={style.link} style={setActive} to="/users">
+            Find users
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

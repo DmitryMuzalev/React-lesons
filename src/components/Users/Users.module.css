@@ -1,0 +1,16 @@
+h2 {
+  margin: 0;
+}
+.users {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.users__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0px 0px 0px 30px;
+}
+/*.users__item {
+}*/

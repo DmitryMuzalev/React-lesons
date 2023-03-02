@@ -17,7 +17,7 @@ export default function MyInfo() {
           </li>
           <li>
             <p>
-              Сity: <span>London</span>
+              City: <span>London</span>
             </p>
           </li>
           <li>

@@ -1,0 +1,46 @@
+.user {
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: 80px auto 100px;
+  gap: 15px;
+
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.user__photo {
+  align-self: center;
+}
+
+/*.user__photo img {
+}
+.user__info {
+}*/
+
+.user__name {
+  display: inline-block;
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.user__location {
+  font-size: 14px;
+  font-weight: 300;
+  margin: 0px 0px 7px 0px;
+}
+
+.user__status {
+  font-style: italic;
+}
+
+.fallowed__btn {
+  cursor: pointer;
+  padding: 5px 15px;
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  align-self: center;
+}

@@ -2,17 +2,24 @@ const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const GET_USERS = 'GET_USERS';
 
-const followAC = (userId) => {
+const followAC = (id) => {
   return {
     type: 'FOLLOW',
-    id: userId,
+    userId: id,
   };
 };
 
-const unfollowAC = (userId) => {
+const unfollowAC = (id) => {
   return {
     type: 'UNFOLLOW',
-    id: userId,
+    userId: id,
+  };
+};
+
+const getUsersAC = (users) => {
+  return {
+    type: 'GET_USERS',
+    newUsers: users,
   };
 };
 
@@ -58,22 +65,22 @@ export default function usersReducer(state = initialState, action) {
   switch (action.type) {
     case FOLLOW: {
       return state.usersList.map((u) => {
-        if (u.id === action.id) return { ...u, followed: true };
+        if (u.id === action.userId) return { ...u, followed: true };
         return u;
       });
     }
     case UNFOLLOW: {
       return state.usersList.map((u) => {
-        if (u.id === action.id) return { ...u, followed: false };
+        if (u.id === action.userId) return { ...u, followed: false };
         return u;
       });
     }
     case GET_USERS: {
-      return { ...state.usersList }; //! Переделать!
+      return { ...state.usersList, ...action.newUsers };
     }
     default:
       return state;
   }
 }
 
-export { followAC, unfollowAC };
+export { followAC, unfollowAC, getUsersAC };
