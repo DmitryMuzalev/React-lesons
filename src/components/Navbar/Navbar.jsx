@@ -28,13 +28,13 @@ export default function Navbar() {
           </NavLink>
         </li>
         <li>
-          <NavLink className={style.link} style={setActive} to="/setting">
-            Setting
+          <NavLink className={style.link} style={setActive} to="/users">
+            Find users
           </NavLink>
         </li>
         <li>
-          <NavLink className={style.link} style={setActive} to="/users">
-            Find users
+          <NavLink className={style.link} style={setActive} to="/setting">
+            Setting
           </NavLink>
         </li>
       </ul>
