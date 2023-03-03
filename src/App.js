@@ -8,9 +8,9 @@ import Music from './components/Music/Music';
 import Setting from './components/Setting/Setting';
 import News from './components/News/News';
 import Profile from './components/Profile/Profile';
-import Users from './components/Users/Users';
+import UsersContainer from './components/Users/UsersContainer';
 
-function App(props) {
+function App() {
   return (
     <div className="app-wrapper">
       <Header />
@@ -22,7 +22,7 @@ function App(props) {
           <Route path="/news" element={<News />} />
           <Route path="/music" element={<Music />} />
           <Route path="/setting" element={<Setting />} />
-          <Route path="/users" element={<Users />} />
+          <Route path="/users" element={<UsersContainer />} />
         </Routes>
       </div>
     </div>
