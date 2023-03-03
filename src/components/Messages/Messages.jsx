@@ -14,7 +14,7 @@ export default function Messages(props) {
 
   return (
     <div>
-      <h2>Messages</h2>
+      <h2 className={style.title}>Messages</h2>
       <div className={style.messagesWrapper}>
         <ul className={style.personList}>{personsData}</ul>
         <div className={style.messages}>

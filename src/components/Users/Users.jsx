@@ -58,7 +58,7 @@ let Users = (props) => {
 
   return (
     <section className={style.users}>
-      <h2>Find users:</h2>
+      <h2 className={style.title}>Find users</h2>
       <ul className={style.users__list}>{usersList}</ul>
     </section>
   );

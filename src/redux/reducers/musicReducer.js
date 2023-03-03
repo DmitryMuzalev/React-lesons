@@ -65,7 +65,7 @@ const initialState = {
 };
 
 //_Reducer:
-const musicReducer = (state = initialState, action) => {
+export default function musicReducer(state = initialState, action) {
   switch (action.type) {
     case SEARCH: {
       return { ...state, valueInput: '' };
@@ -93,6 +93,4 @@ const musicReducer = (state = initialState, action) => {
       return state;
     }
   }
-};
-
-export default musicReducer;
+}
