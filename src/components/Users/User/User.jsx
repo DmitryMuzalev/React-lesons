@@ -2,7 +2,9 @@ import style from './User.module.css';
 import photo from './avatar.svg';
 
 export default function User(props) {
-  console.log(props);
+  const handlerCLickFollowedBtn = () => {
+    props.followToggle(props.id);
+  };
   return (
     <li className={style.user}>
       <a href="#user" className={style.user__photo}>
@@ -17,10 +19,7 @@ export default function User(props) {
         </p>
         <p className={style.user__status}>{props.status}</p>
       </div>
-      <button
-        className={style.fallowed__btn}
-        //! onClick={props.followToggle(props.id)}
-      >
+      <button className={style.fallowed__btn} onClick={handlerCLickFollowedBtn}>
         {props.followed ? 'Follow' : 'Unfollow'}
       </button>
     </li>
