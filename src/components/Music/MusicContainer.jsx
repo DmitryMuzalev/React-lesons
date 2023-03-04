@@ -10,7 +10,7 @@ import Music from './Music';
 const mapStateToProps = (state) => {
   return {
     songs: state.musicPage.songs,
-    inputValue: state.musicPage.inputValue,
+    valueInput: state.musicPage.valueInput,
   };
 };
 

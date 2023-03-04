@@ -3,9 +3,12 @@ import pause from './pause.svg';
 import style from './Song.module.css';
 
 export default function Song(props) {
+  const handlerPlayBtn = () => {
+    props.playToggle(props.id);
+  };
   return (
     <div className={style.song}>
-      <div className={style.song__play}>
+      <div className={style.song__play} onClick={handlerPlayBtn}>
         <img src={props.play ? pause : play} alt="play" />
       </div>
       <div className={style.song__body}>

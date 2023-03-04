@@ -31,36 +31,7 @@ export const setSongsAC = (songs) => {
 
 //_Initial state:
 const initialState = {
-  songs: [
-    {
-      id: 1,
-      singer: 'Queen',
-      song: 'We Will Rock You',
-      duration: '2:01',
-      play: false,
-    },
-    {
-      id: 2,
-      singer: 'The Beatles',
-      song: 'Help!',
-      duration: '2:20',
-      play: false,
-    },
-    {
-      id: 3,
-      singer: 'Bob Marley',
-      song: 'No Woman, No Cry',
-      duration: '3:36',
-      play: false,
-    },
-    {
-      id: 4,
-      singer: 'Linkin Park',
-      song: 'Numb',
-      duration: '3:07',
-      play: false,
-    },
-  ],
+  songs: [],
   valueInput: '',
 };
 
