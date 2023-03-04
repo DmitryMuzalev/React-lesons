@@ -1,0 +1,54 @@
+.song {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 5px 10px;
+  transition: all 0.5s;
+}
+.song:hover {
+  background-color: grey;
+}
+
+.song__play {
+  cursor: pointer;
+  min-width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.song__play img {
+  width: 25px;
+  height: 25px;
+}
+.song__body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.song__track {
+  font-size: 20px;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.song__singer {
+  font-weight: 500;
+  color: black;
+}
+
+.song__singer:hover {
+  text-decoration: underline;
+}
+
+.song__name {
+}
+
+.song__time {
+  font-weight: 300;
+}

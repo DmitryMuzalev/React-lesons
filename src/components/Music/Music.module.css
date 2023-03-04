@@ -1,0 +1,14 @@
+.music {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 600px;
+}
+.title {
+}
+
+.music__list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
