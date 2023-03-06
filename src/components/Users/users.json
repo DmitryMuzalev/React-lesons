@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "photo": "../../components/Users/avatar.svg",
+      "fullName": "Michael Lawrence",
+      "location": {
+        "country": "Belgium",
+        "city": "Brussels"
+      },
+      "status": "Morning person or night owl?",
+      "followed": true
+    },
+    {
+      "id": 2,
+      "photo": "../../components/Users/avatar.svg",
+      "fullName": "Sandra Barrett",
+      "location": {
+        "country": "Netherlands",
+        "city": "Amsterdam"
+      },
+      "status": "We build too many walls and not enough bridges - Isaac Newton",
+      "followed": false
+    },
+    {
+      "id": 3,
+      "photo": "../../components/Users/avatar.svg",
+      "fullName": "Dana Hill",
+      "location": {
+        "country": "Spain",
+        "city": "Madrid"
+      },
+      "status": "Have I told you lately that you’re awesome?",
+      "followed": false
+    }
+  ]
+}

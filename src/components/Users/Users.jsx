@@ -1,45 +1,25 @@
+import axios from '../../axios';
 import User from './User/User';
 import style from './Users.module.css';
 
 let Users = (props) => {
-  const newUsers = [
-    {
-      id: 1,
-      photo: '../../components/Users/avatar.svg',
-      fullName: 'Michael Lawrence',
-      location: {
-        country: 'Belgium',
-        city: 'Brussels',
-      },
-      status: 'Morning person or night owl?',
-      followed: true,
-    },
-    {
-      id: 2,
-      photo: '../../components/Users/avatar.svg',
-      fullName: 'Sandra Barrett',
-      location: {
-        country: 'Netherlands',
-        city: 'Amsterdam',
-      },
-      status: 'We build too many walls and not enough bridges - Isaac Newton',
-      followed: false,
-    },
-    {
-      id: 3,
-      photo: '../../components/Users/avatar.svg',
-      fullName: 'Dana Hill',
-      location: {
-        country: 'Spain',
-        city: 'Madrid',
-      },
-      status: 'Have I told you lately that you’re awesome?',
-      followed: false,
-    },
-  ];
-
   if (props.users.length === 0) {
-    props.setUsers(newUsers);
+    axios.get('/base/users.json').then((users) => {
+      props.setUsers(users.data);
+    });
+
+    /*
+    *_If use fetch:
+    const urlDataBase =
+      'https://react-lessons-b9c75-default-rtdb.firebaseio.com';
+    const request = new Request(urlDataBase + '/base/users.json');
+
+    fetch(request)
+      .then((response) => response.json())
+      .then((users) => {
+        props.setUsers(users);
+      });
+    */
   }
 
   const usersList = props.users.map((u) => {
