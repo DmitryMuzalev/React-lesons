@@ -3,24 +3,13 @@ import User from './User/User';
 import style from './Users.module.css';
 
 let Users = (props) => {
-  if (props.users.length === 0) {
-    axios.get('/base/users.json').then((users) => {
-      props.setUsers(users.data);
-    });
-
-    /*
-    *_If use fetch:
-    const urlDataBase =
-      'https://react-lessons-b9c75-default-rtdb.firebaseio.com';
-    const request = new Request(urlDataBase + '/base/users.json');
-
-    fetch(request)
-      .then((response) => response.json())
-      .then((users) => {
-        props.setUsers(users);
+  const getUsers = () => {
+    if (props.users.length === 0) {
+      axios.get('/base/users.json').then((users) => {
+        props.setUsers(users.data);
       });
-    */
-  }
+    }
+  };
 
   const usersList = props.users.map((u) => {
     return (
@@ -40,6 +29,9 @@ let Users = (props) => {
     <section className={style.users}>
       <h2 className={style.title}>Find users</h2>
       <ul className={style.users__list}>{usersList}</ul>
+      <button className={style.users__btn} onClick={getUsers}>
+        Show more
+      </button>
     </section>
   );
 };
