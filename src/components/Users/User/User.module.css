@@ -1,5 +1,5 @@
 .user {
-  max-width: 600px;
+  /*max-width: 600px;*/
   display: grid;
   grid-template-columns: 80px auto 100px;
   gap: 15px;

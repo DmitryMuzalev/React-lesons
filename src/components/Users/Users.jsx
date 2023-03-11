@@ -27,13 +27,22 @@ class Users extends React.Component {
         />
       );
     });
+
+    const quantityPage = Math.ceil(
+      this.props.totalCountUser / this.props.pageSize
+    );
+
+    const pages = Array.from(Array(quantityPage), (_, i) => i + 1);
+
     return (
       <section className={style.users}>
         <h2 className={style.title}>Find users</h2>
         <ul className={style.users__list}>{usersList}</ul>
-        {/* <button className={style.users__btn} onClick={this.getUsers}>
-          Show more
-        </button>*/}
+        <ul className={style.pagination}>
+          {pages.map((p) => {
+            return <li>{p}</li>;
+          })}
+        </ul>
       </section>
     );
   }
