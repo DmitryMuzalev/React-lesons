@@ -14,10 +14,9 @@ export default function User(props) {
         <a href="#user" className={style.user__name}>
           {props.name}
         </a>
-        <p className={style.user__location}>
-          {props.location.city} / {props.location.country}/
+        <p className={style.user__status}>
+          {props.status ? props.status : 'No status'}
         </p>
-        <p className={style.user__status}>{props.status}</p>
       </div>
       <button className={style.fallowed__btn} onClick={handlerCLickFollowedBtn}>
         {props.followed ? 'Follow' : 'Unfollow'}

@@ -1,5 +1,6 @@
 const FOLLOW_TOGGLE = 'FOLLOW_TOGGLE';
 const SET_USERS = 'SET_USERS';
+const DELETE_USERS = 'DELETE_USERS';
 
 export const followToggleAC = (userId) => {
   return {
@@ -12,6 +13,12 @@ export const setUsersAC = (users) => {
   return {
     type: SET_USERS,
     users,
+  };
+};
+
+export const deleteUsersAC = () => {
+  return {
+    type: DELETE_USERS,
   };
 };
 
@@ -32,6 +39,9 @@ const usersReducer = (state = initialState, action) => {
     }
     case SET_USERS: {
       return { ...state, users: [...state.users, ...action.users] };
+    }
+    case DELETE_USERS: {
+      return { ...state, users: [] };
     }
     default:
       return state;

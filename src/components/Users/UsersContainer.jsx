@@ -1,5 +1,9 @@
 import { connect } from 'react-redux';
-import { followToggleAC, setUsersAC } from '../../redux/reducers/usersReducer';
+import {
+  deleteUsersAC,
+  followToggleAC,
+  setUsersAC,
+} from '../../redux/reducers/usersReducer';
 import Users from './Users.jsx';
 
 let mapStateToProps = (state) => {
@@ -15,6 +19,9 @@ let mapDispatchToProps = (dispatch) => {
 
     setUsers: (users) => {
       dispatch(setUsersAC(users));
+    },
+    deleteUsers: () => {
+      dispatch(deleteUsersAC());
     },
   };
 };

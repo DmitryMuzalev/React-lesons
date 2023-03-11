@@ -4,12 +4,14 @@ import User from './User/User';
 import style from './Users.module.css';
 
 class Users extends React.Component {
-  constructor(props) {
-    super(props);
-
-    axios.get('/base/users.json').then((users) => {
-      this.props.setUsers(users.data);
+  componentDidMount() {
+    axios.get('/users').then((users) => {
+      this.props.setUsers(users.data.items);
     });
+  }
+
+  componentWillUnmount() {
+    this.props.deleteUsers();
   }
 
   render() {
@@ -18,8 +20,7 @@ class Users extends React.Component {
         <User
           key={u.id}
           id={u.id}
-          name={u.fullName}
-          location={u.location}
+          name={u.name}
           status={u.status}
           followed={u.followed}
           followToggle={this.props.followToggle}
