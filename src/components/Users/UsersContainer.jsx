@@ -1,6 +1,7 @@
+import React from 'react';
+import axios from '../../axios';
 import { connect } from 'react-redux';
 import {
-  deleteUsersAC,
   followToggleAC,
   setCurrentPageAC,
   setTotalCountUserAC,
@@ -24,9 +25,6 @@ let mapDispatchToProps = (dispatch) => {
     setUsers: (users) => {
       dispatch(setUsersAC(users));
     },
-    deleteUsers: () => {
-      dispatch(deleteUsersAC());
-    },
     setCurrentPage: (currentPage) => {
       dispatch(setCurrentPageAC(currentPage));
     },
@@ -36,5 +34,30 @@ let mapDispatchToProps = (dispatch) => {
   };
 };
 
-const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(Users);
-export default UsersContainer;
+class UsersContainer extends React.Component {
+  componentDidMount() {
+    axios
+      .get(`/users?count=${this.props.pageSize}&page=${this.props.currentPage}`)
+      .then((users) => {
+        this.props.setUsers(users.data.items);
+        this.props.setTotalCountUser(users.data.totalCount);
+      });
+  }
+
+  handlerClickOnItem = (numberItem) => {
+    this.props.setCurrentPage(numberItem);
+    axios
+      .get(`/users?count=${this.props.pageSize}&page=${numberItem}`)
+      .then((users) => {
+        this.props.setUsers(users.data.items);
+      });
+  };
+
+  render() {
+    return (
+      <Users state={this.props} handlerClickOnItem={this.handlerClickOnItem} />
+    );
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);

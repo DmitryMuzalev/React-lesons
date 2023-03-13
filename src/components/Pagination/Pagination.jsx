@@ -9,9 +9,7 @@ export default function Pagination(props) {
         number={i}
         key={i}
         currentPage={i === props.currentPage}
-        setCurrentPage={props.setCurrentPage}
-        pageSize={props.pageSize}
-        setUsers={props.setUsers}
+        handlerClickOnItem={props.handlerClickOnItem}
       />
     );
   }

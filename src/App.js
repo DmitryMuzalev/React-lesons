@@ -6,7 +6,7 @@ import MessagesContainer from './components/Messages/MessagesContainer';
 import Navbar from './components/Navbar/Navbar';
 import Setting from './components/Setting/Setting';
 import Profile from './components/Profile/Profile';
-import UsersContainer from './components/Users/UsersContainer';
+import Users from './components/Users/UsersContainer';
 import MusicContainer from './components/Music/MusicContainer';
 import NewsContainer from './components/News/NewsContainer';
 
@@ -22,7 +22,7 @@ function App() {
           <Route path="/news" element={<NewsContainer />} />
           <Route path="/music" element={<MusicContainer />} />
           <Route path="/setting" element={<Setting />} />
-          <Route path="/users" element={<UsersContainer />} />
+          <Route path="/users" element={<Users />} />
         </Routes>
       </div>
     </div>

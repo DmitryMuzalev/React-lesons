@@ -1,6 +1,5 @@
 const FOLLOW_TOGGLE = 'FOLLOW_TOGGLE';
 const SET_USERS = 'SET_USERS';
-const DELETE_USERS = 'DELETE_USERS';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_TOTAL_COUNT_USER = 'SET_TOTAL_COUNT_USER';
 
@@ -15,12 +14,6 @@ export const setUsersAC = (users) => {
   return {
     type: SET_USERS,
     users,
-  };
-};
-
-export const deleteUsersAC = () => {
-  return {
-    type: DELETE_USERS,
   };
 };
 
@@ -58,9 +51,6 @@ const usersReducer = (state = initialState, action) => {
     }
     case SET_USERS: {
       return { ...state, users: action.users };
-    }
-    case DELETE_USERS: {
-      return { ...state, users: [] };
     }
     case SET_CURRENT_PAGE: {
       return { ...state, currentPage: action.currentPage };
