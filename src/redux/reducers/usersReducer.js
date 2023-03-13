@@ -32,9 +32,10 @@ export const setTotalCountUserAC = (totalCountUser) => {
   };
 };
 
-export const switchPreloaderToggleAC = () => {
+export const switchPreloaderToggleAC = (isLoaded) => {
   return {
     type: 'PRELOADER_TOGGLE',
+    isLoaded,
   };
 };
 
@@ -67,7 +68,7 @@ const usersReducer = (state = initialState, action) => {
       return { ...state, totalCountUser: action.totalCountUser };
     }
     case PRELOADER_TOGGLE: {
-      return { ...state, isLoaded: !state.isLoaded };
+      return { ...state, isLoaded: action.isLoaded };
     }
 
     default:

@@ -1,6 +1,7 @@
 import style from './Users.module.css';
 import Pagination from '../Pagination/Pagination';
 import User from './User/User';
+import Preloader from '../Preloader/Preloader';
 
 const Users = (props) => {
   const usersList = props.state.users.map((u) => {
@@ -23,6 +24,7 @@ const Users = (props) => {
   return (
     <section className={style.users}>
       <h2 className={style.title}>Find users</h2>
+      {props.state.isLoaded ? <Preloader /> : null}
       <ul className={style.users__list}>{usersList}</ul>
       <Pagination
         quantityPage={quantityPage}
