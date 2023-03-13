@@ -2,6 +2,7 @@ const FOLLOW_TOGGLE = 'FOLLOW_TOGGLE';
 const SET_USERS = 'SET_USERS';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_TOTAL_COUNT_USER = 'SET_TOTAL_COUNT_USER';
+const PRELOADER_TOGGLE = 'PRELOADER_TOGGLE';
 
 export const followToggleAC = (userId) => {
   return {
@@ -31,11 +32,18 @@ export const setTotalCountUserAC = (totalCountUser) => {
   };
 };
 
+export const switchPreloaderToggleAC = () => {
+  return {
+    type: 'PRELOADER_TOGGLE',
+  };
+};
+
 const initialState = {
   users: [],
   pageSize: 10,
   currentPage: 1,
   totalCountUser: 30,
+  isLoaded: true,
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -57,6 +65,9 @@ const usersReducer = (state = initialState, action) => {
     }
     case SET_TOTAL_COUNT_USER: {
       return { ...state, totalCountUser: action.totalCountUser };
+    }
+    case PRELOADER_TOGGLE: {
+      return { ...state, isLoaded: !state.isLoaded };
     }
 
     default:
