@@ -40,7 +40,7 @@ export const setTotalCountUserAC = (totalCountUser) => {
 
 const initialState = {
   users: [],
-  pageSize: 5,
+  pageSize: 10,
   currentPage: 1,
   totalCountUser: 30,
 };
@@ -57,7 +57,7 @@ const usersReducer = (state = initialState, action) => {
       };
     }
     case SET_USERS: {
-      return { ...state, users: [...state.users, ...action.users] };
+      return { ...state, users: action.users };
     }
     case DELETE_USERS: {
       return { ...state, users: [] };
